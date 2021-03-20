@@ -1,7 +1,12 @@
+// Components & Pages
+import Home from './pages/Home'
+import GlobalStyle from './styles/Global'
+
 export default function App() {
   return (
     <div className='App'>
-      <h1>Hello</h1>
+      <GlobalStyle />
+      <Home />
     </div>
   )
 }
