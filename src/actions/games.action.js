@@ -2,7 +2,7 @@ import axios from 'axios'
 import { popularGamesURL, upcomingGamesURL, newGamesURL } from '../api'
 
 export const loadGames = () => async (dispatch) => {
-  dispatch({ type: 'LOADING' })
+  dispatch({ type: 'GAMES_LOADING' })
 
   try {
     const popularResponse = await axios.get(popularGamesURL())

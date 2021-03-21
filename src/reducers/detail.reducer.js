@@ -13,7 +13,7 @@ export default function detailReducer(state = initState, action) {
         screen: action.payload.screen,
         isLoading: false,
       }
-    case 'LOADING':
+    case 'DETAIL_LOADING':
       return { ...state, isLoading: true }
     default:
       return { ...state }
