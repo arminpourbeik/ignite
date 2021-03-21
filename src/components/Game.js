@@ -2,27 +2,33 @@ import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { useDispatch } from 'react-redux'
 import { loadDetail } from '../actions/details.action'
+import { Link } from 'react-router-dom'
 
 export default function Game({ name, released, id, image }) {
   const dispatch = useDispatch()
 
   function loadDetailHandler() {
+    document.body.style.overflow = 'hidden'
     dispatch(loadDetail(id))
   }
 
   return (
-    <StyleGame onClick={loadDetailHandler}>
-      <h3>{name}</h3>
-      <p>{released}</p>
-      <img src={image} alt={name} />
-    </StyleGame>
+    <StyledGame onClick={loadDetailHandler}>
+      <Link to={`/game/${id}`}>
+        <h3>{name}</h3>
+        <p>{released}</p>
+        <img src={image} alt={name} />
+      </Link>
+    </StyledGame>
   )
 }
 
-const StyleGame = styled(motion.div)`
+const StyledGame = styled(motion.div)`
   min-height: 30vh;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
   text-align: center;
+  cursor: pointer;
   border-radius: 1rem;
   img {
     width: 100%;
