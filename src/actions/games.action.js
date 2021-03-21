@@ -1,11 +1,11 @@
 import axios from 'axios'
-import { popularGamesUrl, upcomingGamesUrl, newGamesUrl } from '../api'
+import { popularGamesURL, upcomingGamesURL, newGamesURL } from '../api'
 
-export const loadGames = function () {
-  return async function (dispatch) {
-    const popularResponse = await axios.get(popularGamesUrl())
-    const upcomingGamesResponse = await axios.get(upcomingGamesUrl())
-    const newGamesResponse = await axios.get(newGamesUrl())
+export const loadGames = () => async (dispatch) => {
+  try {
+    const popularResponse = await axios.get(popularGamesURL())
+    const upcomingGamesResponse = await axios.get(upcomingGamesURL())
+    const newGamesResponse = await axios.get(newGamesURL())
 
     dispatch({
       type: 'FETCH_GAMES',
@@ -15,5 +15,7 @@ export const loadGames = function () {
         newGames: newGamesResponse.data.results,
       },
     })
+  } catch (err) {
+    console.log(err)
   }
 }

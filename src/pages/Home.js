@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { loadGames } from '../actions/games.action'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
-
 // Components
 import Game from '../components/Game'
 
