@@ -33,6 +33,11 @@ const GlobalStyle = createGlobalStyle`
     display: block;
   }
 
+  input {
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+  }
+
   h3 {
     font-size: 1.3rem;
     color: #333;

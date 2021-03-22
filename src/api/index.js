@@ -45,3 +45,7 @@ export const gameDetailsURL = (gameId) =>
 // Game Screenshots
 export const gameScreenshotURL = (gameId) =>
   `${base_url}games/${gameId}/screenshots?key=${process.env.REACT_APP_RAWG_API_KEY}`
+
+// Searched Game
+export const searchGameURL = (gameName) =>
+  `${base_url}games?search=${gameName}&page_size=9?key=${process.env.REACT_APP_RAWG_API_KEY}`

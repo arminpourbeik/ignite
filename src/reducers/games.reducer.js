@@ -20,5 +20,11 @@ export default function gamesReducer(state = initState, action) {
       return { ...state, isLoading: true }
     default:
       return { ...state }
+
+    case 'FETCH_SEARCHED':
+      return { ...state, searched: action.payload.searched }
+
+    case 'CLEAR_SEARCHED':
+      return { ...state, searched: [] }
   }
 }
